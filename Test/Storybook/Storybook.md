@@ -277,6 +277,40 @@ export const decorators = [
 <br>
 <br>
 
+### ✨ 스토리에서 state 사용
+
+```js
+import { useState } from 'react';
+import CheckBox from '.';
+
+export default {
+  title: 'Components/CheckBox',
+  component: CheckBox,
+  argTypes: {
+    checked: { control: false },
+  },
+};
+
+const Template = args => {
+  const [checked, setChecked] = useState(true);
+
+  return (
+    <CheckBox
+      {...args}
+      checked={checked}
+      handleChange={() => setChecked(prev => !prev)}
+    />
+  );
+};
+
+export const CheckBoxTemplate = Template.bind({});
+CheckBoxTemplate.args = {};
+```
+
+<br>
+<br>
+<br>
+
 ## 참고
 
 - [스토리북](https://storybook.js.org/docs/react/get-started/introduction)
