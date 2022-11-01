@@ -1,8 +1,6 @@
 # Reconciliation - 재조정
 
-- prev V-DOM과 cur V-DOM의 비교과정
-- react가 virtual DOM을 업데이트하는 핵심 원리
-- `render()` 함수는 새로운 react 엘리먼트 트리를 반환한다.
+- prev V-DOM과 cur V-DOM를 비교하여 변경된 부분을 real DOM에 반영하는 과정
 - 이때 react는 방금 만들어진 트리에 맞게 가장 효과적으로 UI를 갱신할 방법을 알아낼 필요가 있었다.
 - 최첨단 알고리즘도 `o(n³)`의 복잡도를 가진다. -> 이는 너무 비싼 연산. 이를 해결하기 위해 react는 두 가지 **가정**을 기반해, `o(n)`복잡도의 휴리스틱(간편추론의 방법) 알고리즘을 구현
   1. 서로 다른 type의 두 element는 서로 다른 트리를 만든다.
